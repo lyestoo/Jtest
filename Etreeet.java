@@ -37,5 +37,13 @@ public class DiffRenamedFile {
         return oldTreeParser;
     }
 
-  
+   CanonicalTreeParser oldTreeParser = new CanonicalTreeParser();
+        ObjectReader oldReader = repository.newObjectReader();
+            oldTreeParser.reset(oldReader, tree.getId());
+
+
+        walk.dispose();
+
+        return oldTreeParser;
+    }
 }
